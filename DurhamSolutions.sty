@@ -1,0 +1,102 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{DurhamSolutions}[2016/08/04 Level 1 Solutions Package]
+
+
+\RequirePackage[fleqn]{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[margin=2.5cm]{geometry}
+\RequirePackage{fourier}
+\RequirePackage[many]{tcolorbox}
+\definecolor{palatinate}{RGB}{128, 49, 123}
+\definecolor{durhamteal}{RGB}{0, 99, 136}
+\definecolor{warmgrey}{RGB}{150, 142, 133}
+\definecolor{pink}{RGB}{196, 59, 142}
+\RequirePackage{letltxmacro}
+\RequirePackage{etoolbox}
+
+\tcbuselibrary{breakable}					%allows breakable boxes
+	
+\newtcolorbox{howtobox}[1][]{
+	skin=enhanced jigsaw,				%defines skin style
+	width=\textwidth,					%box width
+	arc=3mm,							%curvature of corners
+	toprule=2pt,						%top border width
+	bottomrule=2pt,						%bottom border width
+	leftrule=2pt,						%left border width
+	rightrule=2pt,						%right border width
+	colframe=palatinate,				%border colour
+	colback=gray!20!white,				%background colour
+	title=How to approach the problem?,	%position of title
+	fonttitle=\bfseries,				%bold title font
+	breakable=true,						%automatic page breaks
+	toprule at break=0pt,
+	bottomrule at break=0pt}
+
+\newtcolorbox{questionbox}[1][]{
+	skin=enhanced jigsaw,
+	width=\textwidth,
+	arc=3mm,
+	toprule=2pt,
+	bottomrule=2pt,
+	leftrule=2pt,
+	rightrule=2pt,
+	colframe=durhamteal,
+	colback=gray!20!white,
+	title=Question:,
+	fonttitle=\bfseries,
+	breakable=true,
+	toprule at break=0pt,
+	bottomrule at break=0pt}
+	
+\newtcolorbox{comment_box}[1][]{
+	skin=enhanced jigsaw,
+	width=0.7\textwidth,
+	arc=3mm,
+	toprule=2pt,
+	bottomrule=2pt,
+	leftrule=2pt,
+	rightrule=2pt,
+	colframe=palatinate,
+	colback=gray!20!white,
+	breakable=true,
+	toprule at break=0pt,
+	bottomrule at break=0pt}
+
+\newenvironment{commentbox}[1][]{
+	\flushright
+	\begin{comment_box}}
+	 {\end{comment_box} \medskip}
+
+\renewcommand{\title}[1]{\begin{center}{\Large \textbf{#1}}\end{center}}
+
+\newcommand{\QuestionPart}[1]{\begin{center} {\large Part #1}\end{center}}
+\newcommand{\Part}[1]{\begin{center} {\large \textbf{Part #1}}\end{center}}
+
+\AtBeginEnvironment{questionbox}{\renewcommand{\Part}{\QuestionPart}}
+
+\newcommand{\diagram}[2]{\begin{figure}[h]
+\centering
+\includegraphics[scale=#1]{#2}
+\end{figure}}
+
+\newcommand{\model}[0]{\begin{center}{\large Example of Solution}\end{center}}
+
+\newcommand{\vel}{\ \rm{m\ s^{-1}}}
+\newcommand{\acc}{\ \rm{m\ s^{-2}}}
+\newcommand{\mom}{\ \rm{kg\ m\ s^{-1}}}
+
+
+\LetLtxMacro{\cedilla}{\c}
+\renewcommand{\c}{3.00\times 10^{8}\ \rm{m\ s^{-1}}}
+\newcommand{\e}{1.60\times 10^{-19}\ \rm{C}}
+\newcommand{\h}{6.63\times 10^{-34}\ \rm{J\ s}}
+\newcommand{\g}{9.81\ \rm{m\ s^{-2}}}
+\newcommand{\kb}{1.38\times 10^{-23}\ \rm{J\ K^{-1}}}
+\newcommand{\grav}{6.67\times 10^{-11}\ \rm{N\ m^2\ kg^{-2}}}
+\newcommand{\gasconst}{8.31\ \rm{J\ mol^{-1}\ K^{-1}}}
+\newcommand{\melectron}{9.11\times 10^{-31}\ \rm{kg}}
+\newcommand{\mproton}{1.67\times 10^{-27}\ \rm{kg}}
+\newcommand{\muzero}{4\pi \times 10^{-7}\ \rm{Wb\ A^{-1}\ m^{-1}}}
+\newcommand{\ezero}{8.85\times 10^{-12}\ \rm{C^2\ N^{-1}\ m^{-2}}}
+\newcommand{\hbarval}{1.05\times 10^{-34}\ \rm{J\ s}}
