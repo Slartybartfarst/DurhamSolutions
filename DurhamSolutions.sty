@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{DurhamSolutions}[2016/08/04 Level 1 Solutions Package]
+\ProvidesPackage{DurhamSolutions}[2016/08/25 Level 1 Solutions Package]
 
 
 \RequirePackage[fleqn]{amsmath}
@@ -14,6 +14,7 @@
 \definecolor{pink}{RGB}{196, 59, 142}
 \RequirePackage{letltxmacro}
 \RequirePackage{etoolbox}
+\RequirePackage{tasks}
 
 \tcbuselibrary{breakable}					%allows breakable boxes
 	
@@ -82,6 +83,8 @@
 
 \newcommand{\model}[0]{\begin{center}{\large Example of Solution}\end{center}}
 
+\newcommand{\vect}[1]{\boldsymbol{\vec{#1}}}
+
 \newcommand{\vel}{\ \rm{m\ s^{-1}}}
 \newcommand{\acc}{\ \rm{m\ s^{-2}}}
 \newcommand{\mom}{\ \rm{kg\ m\ s^{-1}}}
@@ -100,3 +103,4 @@
 \newcommand{\muzero}{4\pi \times 10^{-7}\ \rm{Wb\ A^{-1}\ m^{-1}}}
 \newcommand{\ezero}{8.85\times 10^{-12}\ \rm{C^2\ N^{-1}\ m^{-2}}}
 \newcommand{\hbarval}{1.05\times 10^{-34}\ \rm{J\ s}}
+\newcommand{\amu}{1.66\times 10^{-27}\ \rm{kg}}
