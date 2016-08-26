@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{DurhamSolutions}[2016/08/25 Level 1 Solutions Package]
+\ProvidesPackage{DurhamSolutions}[2016/08/26 Level 1 Solutions Package]
 
 
 \RequirePackage[fleqn]{amsmath}
@@ -12,8 +12,6 @@
 \definecolor{durhamteal}{RGB}{0, 99, 136}
 \definecolor{warmgrey}{RGB}{150, 142, 133}
 \definecolor{pink}{RGB}{196, 59, 142}
-\RequirePackage{letltxmacro}
-\RequirePackage{etoolbox}
 \RequirePackage{tasks}
 
 \tcbuselibrary{breakable}					%allows breakable boxes
@@ -89,9 +87,9 @@
 \newcommand{\acc}{\ \rm{m\ s^{-2}}}
 \newcommand{\mom}{\ \rm{kg\ m\ s^{-1}}}
 
+\let\cedilla\c
 
-\LetLtxMacro{\cedilla}{\c}
-\renewcommand{\c}{3.00\times 10^{8}\ \rm{m\ s^{-1}}}
+\renewcommand{\c}[0]{3.00\times 10^{8}\ \rm{m\ s^{-1}}}
 \newcommand{\e}{1.60\times 10^{-19}\ \rm{C}}
 \newcommand{\h}{6.63\times 10^{-34}\ \rm{J\ s}}
 \newcommand{\g}{9.81\ \rm{m\ s^{-2}}}
